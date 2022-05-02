@@ -1,0 +1,29 @@
+1 SELECT COUNT (*) AS nuoviscritti,YEAR("enrolment_date") AS annoiscrizione FROM students GROUP BY YEAR ("enrolment_date" );
+2 SELECT COUNT(*)  AS numeroinsegnanti, "office_address" AS stessoedificio FROM teachers GROUP BY office_address;
+3 SELECT AVG(vote) AS mediaesame, "exam_id" AS esame  FROM exam_student GROUP BY exam_id  ORDER BY exam_id ASC;
+4 SELECT COUNT (*)  AS nomecorso,"department_id" AS dipartimento  FROM degrees GROUP BY "department_id";
+
+
+1 SELECT students.name,students.surname,students.id 
+FROM students
+JOIN degrees ON students.degree_id = degrees.id WHERE degrees.name='Corso di Laurea in Economia';
+2  SELECT degrees.name,degrees.level
+FROM degrees
+JOIN departments ON degrees.department_id = departments.id WHERE departments.name='Dipartimento di Neuroscienze'
+
+3  SELECT courses.name,courses.description,courses.year,courses.degree_id
+FROM courses
+JOIN course_teacher ON courses.id = course_id WHERE teacher_id='44';
+
+4 SELECT students.name, students.surname
+FROM students
+JOIN ...
+
+5 SELECT degrees.name,degrees.level
+FROM degrees
+JOIN courses ON degrees.id=courses.id
+JOIN course_teacher ON courses.id = course_id ;
+
+6 SELECT DISTINCT teachers.name, teachers.surname
+FROM teachers
+JOIn ...
